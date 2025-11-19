@@ -17,7 +17,7 @@
 - [x] Rails app creation with esbuild, Turbo, PostgreSQL (1h) - COMPLETED
 - [x] Tailwind CSS configuration (1h) - AUTO-COMPLETED by Rails
 - [x] React & TypeScript setup (1h)
-- [ ] Procfile.dev configuration for development (0.5h)
+- [x] Procfile.dev configuration for development (0.5h) - AUTO-COMPLETED by Rails
 - [ ] Initial database configuration (0.5h)
 
 ### Day 2: Core Models & Database (8 hours)
