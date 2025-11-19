@@ -5,13 +5,13 @@
 ### Day 1: Repository & Environment Setup (8 hours)
 
 #### Morning Session (4 hours)
-- [ ] Git repository initialization (0.5h)
-- [ ] GitFlow branch structure setup (0.5h)
-- [ ] GitHub remote repository creation (0.5h)
-- [ ] README documentation setup (0.5h)
-- [ ] Development environment verification (0.5h)
-- [ ] PostgreSQL installation & verification (1h)
-- [ ] Node.js & Yarn setup verification (0.5h)
+- [x] Git repository initialization (0.5h)
+- [x] GitFlow branch structure setup (0.5h)
+- [x] GitHub remote repository creation (0.5h)
+- [x] README documentation setup (0.5h)
+- [x] Development environment verification (0.5h)
+- [x] PostgreSQL installation & verification (1h)
+- [x] Node.js & Yarn setup verification (0.5h)
 
 #### Afternoon Session (4 hours)
 - [x] Rails app creation with esbuild, Turbo, PostgreSQL (1h) - COMPLETED
