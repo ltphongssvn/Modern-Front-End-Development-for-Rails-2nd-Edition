@@ -61,7 +61,7 @@
 ### Day 5: React Components & Testing (8 hours)
 
 #### Morning Session (4 hours)
-- [ ] Factory floor visualization React component (2h)
+- [x] Factory floor visualization React component (2h)
 - [ ] Production scheduling Gantt chart component (2h)
 
 #### Afternoon Session (4 hours)
