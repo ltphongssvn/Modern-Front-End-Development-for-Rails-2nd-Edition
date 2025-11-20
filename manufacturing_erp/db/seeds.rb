@@ -40,6 +40,16 @@ equipment2 = line1.equipment.create!(
   operating_hours: 1200
 )
 
+# Create Equipment for Line B (in maintenance)
+equipment3 = line2.equipment.create!(
+  name: "CNC Machine B1",
+  serial_number: "CNC-2024-003",
+  status: "maintenance",
+  last_maintenance: 60.days.ago,
+  next_maintenance: Date.today,
+  operating_hours: 4800
+)
+
 # Create Maintenance Schedules
 MaintenanceSchedule.create!(
   equipment: equipment1,
@@ -47,6 +57,14 @@ MaintenanceSchedule.create!(
   maintenance_type: "Preventive",
   description: "Regular quarterly maintenance",
   status: "scheduled"
+)
+
+MaintenanceSchedule.create!(
+  equipment: equipment3,
+  scheduled_date: Date.today,
+  maintenance_type: "Corrective",
+  description: "Bearing replacement and calibration",
+  status: "in_progress"
 )
 
 # Create Quality Checks
@@ -60,14 +78,25 @@ QualityCheck.create!(
   notes: "All tolerances within spec"
 )
 
-# Create Recent Alert
+# Create Recent Alerts
 Alert.create!(
   production_line: line2,
+  equipment: equipment3,
   alert_type: "Maintenance Required",
   severity: "high",
-  message: "Line B requires scheduled maintenance",
+  message: "Line B CNC Machine requires scheduled maintenance",
   status: "active",
   triggered_at: 2.hours.ago
+)
+
+Alert.create!(
+  production_line: line1,
+  equipment: equipment2,
+  alert_type: "Performance Warning",
+  severity: "medium",
+  message: "Robotic Arm efficiency dropped below 90%",
+  status: "active",
+  triggered_at: 30.minutes.ago
 )
 
 puts "Seeded: #{ProductionLine.count} production lines"
