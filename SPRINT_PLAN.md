@@ -54,7 +54,7 @@
 - [ ] Turbo Streams setup for real-time updates (2h)
 
 #### Afternoon Session (4 hours)
-- [ ] ActionCable configuration (1h)
+- [x] ActionCable configuration (1h)
 - [ ] Production line status broadcasts (1.5h)
 - [ ] Equipment failure alert broadcasts (1.5h)
 
