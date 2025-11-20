@@ -82,3 +82,13 @@ bin/rails generate controller Dashboard index
 - [ ] Create Turbo Frame views for dashboard sections
 - [ ] Implement React components for visualizations
 - [ ] Set up ActionCable for real-time updates
+
+### Server Running
+```bash
+cd manufacturing_erp && bin/dev
+# Started successfully:
+# - Rails server on http://localhost:3000
+# - esbuild watching JavaScript changes
+# - Tailwind CSS compilation
+# Dashboard view accessible with Turbo Frames for each section
+```
