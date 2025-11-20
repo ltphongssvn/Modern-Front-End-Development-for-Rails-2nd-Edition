@@ -18,7 +18,7 @@
 - [x] Tailwind CSS configuration (1h) - AUTO-COMPLETED by Rails
 - [x] React & TypeScript setup (1h)
 - [x] Procfile.dev configuration for development (0.5h) - AUTO-COMPLETED by Rails
-- [ ] Initial database configuration (0.5h)
+- [x] Initial database configuration (0.5h)
 
 ### Day 2: Core Models & Database (8 hours)
 
@@ -38,19 +38,19 @@
 
 #### Morning Session (4 hours)
 - [x] Dashboard controller setup (1h)
-- [ ] Production lines controller (1h)
-- [ ] Equipment controller (1h)
-- [ ] Maintenance controller (1h)
+- [x] Production lines controller (1h)
+- [x] Equipment controller (1h)
+- [X] Maintenance controller (1h)
 
 #### Afternoon Session (4 hours)
 - [x] Dashboard main view with Turbo Frames (2h)
-- [ ] Production status partial view (1h)
-- [ ] Equipment status partial view (1h)
+- [x] Production status partial view (1h) - Included in dashboard
+- [x] Equipment status partial view (1h) - Included in dashboard
 
 ### Day 4: Hotwire Implementation (8 hours)
 
 #### Morning Session (4 hours)
-- [ ] Turbo Frames for dashboard sections (2h)
+- [x] Turbo Frames for dashboard sections (2h) - Implemented in dashboard view
 - [ ] Turbo Streams setup for real-time updates (2h)
 
 #### Afternoon Session (4 hours)
