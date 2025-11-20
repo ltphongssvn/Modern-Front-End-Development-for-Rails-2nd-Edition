@@ -56,7 +56,7 @@
 #### Afternoon Session (4 hours)
 - [x] ActionCable configuration (1h)
 - [x] Production line status broadcasts (1.5h)
-- [ ] Equipment failure alert broadcasts (1.5h)
+- [x] Equipment failure alert broadcasts (1.5h)
 
 ### Day 5: React Components & Testing (8 hours)
 
