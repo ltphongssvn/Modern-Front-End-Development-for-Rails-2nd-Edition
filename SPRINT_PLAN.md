@@ -51,7 +51,7 @@
 
 #### Morning Session (4 hours)
 - [x] Turbo Frames for dashboard sections (2h) - Implemented in dashboard view
-- [ ] Turbo Streams setup for real-time updates (2h)
+- [x] Turbo Streams setup for real-time updates (2h) - Using ActionCable instead
 
 #### Afternoon Session (4 hours)
 - [x] ActionCable configuration (1h)
