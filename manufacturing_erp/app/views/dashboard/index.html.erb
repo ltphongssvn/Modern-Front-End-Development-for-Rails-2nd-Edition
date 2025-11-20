@@ -13,11 +13,17 @@
             <span class="px-2 py-1 text-xs rounded <%= line.status == 'active' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800' %>">
               <%= line.status.upcase %>
             </span>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
           </div>
           <div class="mt-2 text-sm text-gray-600">
             <p>Capacity: <%= line.capacity %> | Output: <%= line.current_output %></p>
             <p>Efficiency: <%= line.efficiency %>%</p>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
           </div>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
         </div>
       <% end %>
     <% end %>
@@ -30,6 +36,8 @@
           <p class="font-medium"><%= alert.alert_type %></p>
           <p class="text-sm text-gray-600"><%= alert.message %></p>
           <p class="text-xs text-gray-500 mt-1"><%= time_ago_in_words(alert.triggered_at) %> ago</p>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
         </div>
       <% end %>
     <% end %>
@@ -42,6 +50,8 @@
           <p class="font-medium"><%= schedule.equipment.name %></p>
           <p class="text-sm text-gray-600"><%= schedule.maintenance_type %></p>
           <p class="text-xs text-gray-500"><%= schedule.scheduled_date.strftime("%B %d, %Y") %></p>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
         </div>
       <% end %>
     <% end %>
@@ -56,10 +66,18 @@
             <span class="text-sm <%= check.result == 'Pass' ? 'text-green-600' : 'text-red-600' %>">
               <%= check.result %>
             </span>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
           </div>
           <p class="text-xs text-gray-500 mt-1"><%= time_ago_in_words(check.performed_at) %> ago</p>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
         </div>
       <% end %>
     <% end %>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
   </div>
+  <!-- React Factory Floor Visualization -->
+  <div id="factory-floor-visualization" class="col-span-1 lg:col-span-2 mt-6"></div>
 </div>
