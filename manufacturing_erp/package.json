@@ -2,6 +2,7 @@
   "name": "app",
   "private": true,
   "devDependencies": {
+    "@types/rails__actioncable": "^8",
     "esbuild": "^0.27.0"
   },
   "scripts": {
@@ -11,6 +12,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.20",
+    "@rails/actioncable": "^8.1.100",
     "@tailwindcss/cli": "^4.1.17",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",

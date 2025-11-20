@@ -30,7 +30,9 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@hotwired/stimulus", "npm:3.2.2"],\
           ["@hotwired/turbo-rails", "npm:8.0.20"],\
+          ["@rails/actioncable", "npm:8.1.100"],\
           ["@tailwindcss/cli", "npm:4.1.17"],\
+          ["@types/rails__actioncable", "npm:8.0.3"],\
           ["@types/react", "npm:19.2.6"],\
           ["@types/react-dom", "virtual:0460f86c7587ee75dac643681550c044e8047ba46e219a5baac054fc0fea2d0af97a9bd3fe4b22de0884797215e0a1a4368bb60f9ef7087a69c4008789f4e032#npm:19.2.3"],\
           ["app", "workspace:."],\
@@ -807,6 +809,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/rails__actioncable", [\
+      ["npm:8.0.3", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@types-rails__actioncable-npm-8.0.3-c42089fe8c-10c0.zip/node_modules/@types/rails__actioncable/",\
+        "packageDependencies": [\
+          ["@types/rails__actioncable", "npm:8.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/react", [\
       ["npm:19.2.6", {\
         "packageLocation": "../../../../.yarn/berry/cache/@types-react-npm-19.2.6-76a01efedc-10c0.zip/node_modules/@types/react/",\
@@ -894,7 +905,9 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@hotwired/stimulus", "npm:3.2.2"],\
           ["@hotwired/turbo-rails", "npm:8.0.20"],\
+          ["@rails/actioncable", "npm:8.1.100"],\
           ["@tailwindcss/cli", "npm:4.1.17"],\
+          ["@types/rails__actioncable", "npm:8.0.3"],\
           ["@types/react", "npm:19.2.6"],\
           ["@types/react-dom", "virtual:0460f86c7587ee75dac643681550c044e8047ba46e219a5baac054fc0fea2d0af97a9bd3fe4b22de0884797215e0a1a4368bb60f9ef7087a69c4008789f4e032#npm:19.2.3"],\
           ["app", "workspace:."],\
