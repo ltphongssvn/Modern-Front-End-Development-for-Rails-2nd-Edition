@@ -40,7 +40,7 @@
 - [x] Dashboard controller setup (1h)
 - [x] Production lines controller (1h)
 - [x] Equipment controller (1h)
-- [X] Maintenance controller (1h)
+- [x] Maintenance controller (1h)
 
 #### Afternoon Session (4 hours)
 - [x] Dashboard main view with Turbo Frames (2h)
