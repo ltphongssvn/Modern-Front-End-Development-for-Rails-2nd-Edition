@@ -1,6 +1,7 @@
+# manufacturing_erp/app/channels/production_status_channel.rb
 class ProductionStatusChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    stream_from "production_status"
   end
 
   def unsubscribed
