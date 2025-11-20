@@ -68,7 +68,7 @@
 - [x] Component TypeScript interfaces (1h) - Implemented in FactoryFloorVisualization.tsx
 - [ ] Integration testing setup (1h)
 - [ ] Sprint review preparation (1h)
-- [ ] Sprint retrospective & documentation (1h)
+- [x] Sprint retrospective & documentation (1h)
 
 ## Definition of Done
 - [ ] All tests passing
