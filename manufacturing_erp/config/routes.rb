@@ -1,6 +1,9 @@
 # manufacturing_erp/config/routes.rb
 Rails.application.routes.draw do
   root "dashboard#index"
+  namespace :api do
+    resources :production_lines, only: [:index]
+  end
   get "dashboard/index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
