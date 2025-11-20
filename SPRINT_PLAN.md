@@ -23,27 +23,27 @@
 ### Day 2: Core Models & Database (8 hours)
 
 #### Morning Session (4 hours)
-- [ ] Production line model & migration (1h)
-- [ ] Equipment model & migration (1h)
-- [ ] Maintenance schedule model & migration (1h)
-- [ ] Quality check model & migration (1h)
+- [x] Production line model & migration (1h)
+- [x] Equipment model & migration (1h)
+- [x] Maintenance schedule model & migration (1h)
+- [x] Quality check model & migration (1h)
 
 #### Afternoon Session (4 hours)
-- [ ] Alert model & migration (1h)
-- [ ] Sensor data model & migration (1h)
-- [ ] Database associations setup (1h)
-- [ ] Seed data creation (1h)
+- [x] Alert model & migration (1h)
+- [x] Sensor data model & migration (1h)
+- [x] Database associations setup (1h)
+- [x] Seed data creation (1h)
 
 ### Day 3: Controllers & Views (8 hours)
 
 #### Morning Session (4 hours)
-- [ ] Dashboard controller setup (1h)
+- [x] Dashboard controller setup (1h)
 - [ ] Production lines controller (1h)
 - [ ] Equipment controller (1h)
 - [ ] Maintenance controller (1h)
 
 #### Afternoon Session (4 hours)
-- [ ] Dashboard main view with Turbo Frames (2h)
+- [x] Dashboard main view with Turbo Frames (2h)
 - [ ] Production status partial view (1h)
 - [ ] Equipment status partial view (1h)
 
