@@ -2,8 +2,10 @@
 Rails.application.routes.draw do
   root "dashboard#index"
   resources :production_lines
+  resources :equipment
   namespace :api do
     resources :production_lines, only: [:index]
+  resources :equipment
   end
   get "dashboard/index"
 
