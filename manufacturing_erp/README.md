@@ -108,3 +108,33 @@ cd manufacturing_erp && bin/dev
 - PostgreSQL, Yarn 4.11.0
 - React 19.2.0, TypeScript 5.7.3
 - ActionCable WebSockets
+
+## Sprint 2: CRUD Operations Implementation
+
+### Completed Features
+- ✅ ProductionLines CRUD controller with full REST actions
+- ✅ Equipment CRUD controller with associations
+- ✅ Form validations and error handling
+- ✅ Navigation bar across all views
+- ✅ Tailwind CSS styling for all forms and views
+
+### Technical Implementation
+```bash
+# Generated controllers
+bin/rails generate controller ProductionLines index show new edit create update destroy --skip-routes
+bin/rails generate controller Equipment index show new edit create update destroy --skip-routes
+
+# Added routes
+resources :production_lines
+resources :equipment
+```
+
+### Sprint Metrics
+- Duration: 2 hours
+- Files created: 18 new files
+- Lines of code: 518+ additions
+- Merge: Standard merge (should have used squash)
+
+### Lessons Learned
+- Should use squash merge for cleaner history
+- Need environment variables for configurations
