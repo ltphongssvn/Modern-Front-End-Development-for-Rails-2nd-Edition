@@ -1,0 +1,13 @@
+<!-- manufacturing_erp/app/views/layouts/_navigation.html.erb -->
+<nav class="bg-gray-800 text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="flex space-x-6">
+      <%= link_to "Dashboard", root_path, class: "hover:text-gray-300" %>
+      <%= link_to "Production Lines", production_lines_path, class: "hover:text-gray-300" %>
+      <%= link_to "Equipment", equipment_index_path, class: "hover:text-gray-300" %>
+    </div>
+    <div class="text-sm text-gray-400">
+      Manufacturing ERP System
+    </div>
+  </div>
+</nav>

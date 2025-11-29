@@ -1,0 +1,80 @@
+<!-- manufacturing_erp/app/views/equipment/show.html.erb -->
+<div class="container mx-auto px-4 py-8">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold"><%= @equipment.name %></h1>
+    <div class="space-x-2">
+      <%= link_to "Edit", edit_equipment_path(@equipment), class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+      <%= link_to "Back", equipment_index_path, class: "bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400" %>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Details</h2>
+      <dl class="space-y-2">
+        <div class="flex justify-between">
+          <dt class="font-medium">Serial Number:</dt>
+          <dd><%= @equipment.serial_number %></dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Production Line:</dt>
+          <dd><%= link_to @equipment.production_line.name, @equipment.production_line, class: "text-blue-600 hover:underline" %></dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Status:</dt>
+          <dd class="px-2 py-1 rounded text-xs <%= @equipment.status == 'operational' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' %>">
+            <%= @equipment.status.upcase %>
+          </dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Operating Hours:</dt>
+          <dd><%= @equipment.operating_hours %> hours</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Last Maintenance:</dt>
+          <dd><%= @equipment.last_maintenance&.strftime("%B %d, %Y") || "N/A" %></dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Next Maintenance:</dt>
+          <dd><%= @equipment.next_maintenance&.strftime("%B %d, %Y") || "Not scheduled" %></dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Maintenance Schedules</h2>
+      <% if @maintenance_schedules.any? %>
+        <div class="space-y-2">
+          <% @maintenance_schedules.each do |schedule| %>
+            <div class="border rounded p-3">
+              <div class="font-medium"><%= schedule.maintenance_type %></div>
+              <div class="text-sm text-gray-600"><%= schedule.description %></div>
+              <div class="text-xs text-gray-500 mt-1">
+                <%= schedule.scheduled_date.strftime("%B %d, %Y") %> - <%= schedule.status %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="text-gray-500">No maintenance schedules</p>
+      <% end %>
+    </div>
+
+    <div class="bg-white shadow rounded-lg p-6 lg:col-span-2">
+      <h2 class="text-xl font-semibold mb-4">Recent Alerts</h2>
+      <% if @recent_alerts.any? %>
+        <div class="space-y-2">
+          <% @recent_alerts.each do |alert| %>
+            <div class="border-l-4 <%= alert.severity == 'high' ? 'border-red-500 bg-red-50' : 'border-yellow-500 bg-yellow-50' %> p-3">
+              <div class="font-medium"><%= alert.alert_type %></div>
+              <div class="text-sm"><%= alert.message %></div>
+              <div class="text-xs text-gray-500 mt-1"><%= time_ago_in_words(alert.triggered_at) %> ago</div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="text-gray-500">No recent alerts</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<!-- manufacturing_erp/app/views/equipment/_form.html.erb -->
+<%= form_with(model: equipment) do |form| %>
+  <% if equipment.errors.any? %>
+    <div class="bg-red-50 border border-red-200 rounded p-4 mb-4">
+      <h3 class="text-red-800 font-medium mb-2"><%= pluralize(equipment.errors.count, "error") %> prohibited this equipment from being saved:</h3>
+      <ul class="list-disc list-inside text-red-700">
+        <% equipment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="space-y-4">
+    <div>
+      <%= form.label :name, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_field :name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+    </div>
+
+    <div>
+      <%= form.label :serial_number, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_field :serial_number, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+    </div>
+
+    <div>
+      <%= form.label :production_line_id, "Production Line", class: "block text-sm font-medium text-gray-700" %>
+      <%= form.select :production_line_id, options_from_collection_for_select(@production_lines, :id, :name, equipment.production_line_id), 
+                      { prompt: 'Select a production line' }, 
+                      class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+    </div>
+
+    <div>
+      <%= form.label :status, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.select :status, options_for_select([['Operational', 'operational'], ['Maintenance', 'maintenance'], ['Offline', 'offline']], equipment.status), 
+                      {}, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+    </div>
+
+    <div>
+      <%= form.label :operating_hours, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.number_field :operating_hours, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+    </div>
+
+    <div>
+      <%= form.label :last_maintenance, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.datetime_local_field :last_maintenance, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+    </div>
+
+    <div>
+      <%= form.label :next_maintenance, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.datetime_local_field :next_maintenance, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+    </div>
+
+    <div class="flex gap-4">
+      <%= form.submit class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 cursor-pointer" %>
+      <%= link_to "Cancel", equipment_index_path, class: "bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400" %>
+    </div>
+  </div>
+<% end %>

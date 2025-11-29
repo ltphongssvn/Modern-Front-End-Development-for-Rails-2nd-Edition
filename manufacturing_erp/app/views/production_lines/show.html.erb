@@ -1,0 +1,76 @@
+<!-- manufacturing_erp/app/views/production_lines/show.html.erb -->
+<div class="container mx-auto px-4 py-8">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold"><%= @production_line.name %></h1>
+    <div class="space-x-2">
+      <%= link_to "Edit", edit_production_line_path(@production_line), class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+      <%= link_to "Back", production_lines_path, class: "bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400" %>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Details</h2>
+      <dl class="space-y-2">
+        <div class="flex justify-between">
+          <dt class="font-medium">Status:</dt>
+          <dd class="px-2 py-1 rounded text-xs <%= @production_line.status == 'active' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800' %>">
+            <%= @production_line.status.upcase %>
+          </dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Capacity:</dt>
+          <dd><%= @production_line.capacity %> units/hour</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Current Output:</dt>
+          <dd><%= @production_line.current_output %> units/hour</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Efficiency:</dt>
+          <dd><%= @production_line.efficiency %>%</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="font-medium">Location:</dt>
+          <dd><%= @production_line.location %></dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Equipment (<%= @equipment.count %>)</h2>
+      <div class="space-y-2">
+        <% @equipment.each do |equip| %>
+          <div class="border rounded p-3">
+            <div class="flex justify-between">
+              <span class="font-medium"><%= equip.name %></span>
+              <span class="text-sm px-2 py-1 rounded <%= equip.status == 'operational' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' %>">
+                <%= equip.status %>
+              </span>
+            </div>
+            <div class="text-sm text-gray-600 mt-1">
+              Serial: <%= equip.serial_number %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded-lg p-6 lg:col-span-2">
+      <h2 class="text-xl font-semibold mb-4">Recent Alerts</h2>
+      <% if @recent_alerts.any? %>
+        <div class="space-y-2">
+          <% @recent_alerts.each do |alert| %>
+            <div class="border-l-4 <%= alert.severity == 'high' ? 'border-red-500 bg-red-50' : 'border-yellow-500 bg-yellow-50' %> p-3">
+              <div class="font-medium"><%= alert.alert_type %></div>
+              <div class="text-sm"><%= alert.message %></div>
+              <div class="text-xs text-gray-500 mt-1"><%= time_ago_in_words(alert.triggered_at) %> ago</div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="text-gray-500">No recent alerts</p>
+      <% end %>
+    </div>
+  </div>
+</div>
