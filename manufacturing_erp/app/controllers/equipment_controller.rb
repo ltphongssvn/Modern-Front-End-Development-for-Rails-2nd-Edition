@@ -2,6 +2,8 @@
 class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
   before_action :set_production_lines, only: [:new, :edit]
+  before_action :authorize_edit!, only: [:new, :create, :edit, :update]
+  before_action :authorize_delete!, only: [:destroy]
 
   def index
     @equipment = Equipment.includes(:production_line)
@@ -56,5 +58,13 @@ class EquipmentController < ApplicationController
   def equipment_params
     params.require(:equipment).permit(:name, :serial_number, :production_line_id, :status, 
                                       :last_maintenance, :next_maintenance, :operating_hours)
+  end
+  
+  def authorize_edit!
+    redirect_to equipment_index_path, alert: 'Not authorized to edit' unless current_user.can_edit?
+  end
+  
+  def authorize_delete!
+    redirect_to equipment_index_path, alert: 'Not authorized to delete' unless current_user.can_delete?
   end
 end
