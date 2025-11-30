@@ -1,6 +1,42 @@
 # manufacturing_erp/db/seeds.rb
 # Clear existing data
-[SensorDatum, Alert, QualityCheck, MaintenanceSchedule, Equipment, ProductionLine].each(&:destroy_all)
+[SensorDatum, Alert, QualityCheck, MaintenanceSchedule, Equipment, ProductionLine, User].each(&:destroy_all)
+
+# Create users with different roles
+admin = User.create!(
+  email: 'admin@manufacturing.com',
+  password: 'password123',
+  password_confirmation: 'password123',
+  role: 'admin'
+)
+
+manager = User.create!(
+  email: 'manager@manufacturing.com',
+  password: 'password123',
+  password_confirmation: 'password123',
+  role: 'manager'
+)
+
+operator = User.create!(
+  email: 'operator@manufacturing.com',
+  password: 'password123',
+  password_confirmation: 'password123',
+  role: 'operator'
+)
+
+viewer = User.create!(
+  email: 'viewer@manufacturing.com',
+  password: 'password123',
+  password_confirmation: 'password123',
+  role: 'viewer'
+)
+
+puts "Created users:"
+puts "  admin@manufacturing.com (admin)"
+puts "  manager@manufacturing.com (manager)"
+puts "  operator@manufacturing.com (operator)"
+puts "  viewer@manufacturing.com (viewer)"
+puts "  Password for all: password123"
 
 # Create Production Lines
 line1 = ProductionLine.create!(
@@ -104,10 +140,3 @@ puts "Seeded: #{Equipment.count} equipment"
 puts "Seeded: #{MaintenanceSchedule.count} maintenance schedules"
 puts "Seeded: #{QualityCheck.count} quality checks"
 puts "Seeded: #{Alert.count} alerts"
-# Create test user
-User.create!(
-  email: 'admin@manufacturing.com',
-  password: 'password123',
-  password_confirmation: 'password123'
-)
-puts "Created admin user: admin@manufacturing.com / password123"
