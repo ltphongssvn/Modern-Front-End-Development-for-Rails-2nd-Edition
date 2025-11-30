@@ -1,6 +1,8 @@
 # manufacturing_erp/app/controllers/production_lines_controller.rb
 class ProductionLinesController < ApplicationController
   before_action :set_production_line, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_edit!, only: [:new, :create, :edit, :update]
+  before_action :authorize_delete!, only: [:destroy]
 
   def index
     @production_lines = ProductionLine.all
@@ -48,5 +50,13 @@ class ProductionLinesController < ApplicationController
 
   def production_line_params
     params.require(:production_line).permit(:name, :status, :capacity, :current_output, :efficiency, :location)
+  end
+  
+  def authorize_edit!
+    redirect_to production_lines_path, alert: 'Not authorized to edit' unless current_user.can_edit?
+  end
+  
+  def authorize_delete!
+    redirect_to production_lines_path, alert: 'Not authorized to delete' unless current_user.can_delete?
   end
 end
