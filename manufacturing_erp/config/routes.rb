@@ -1,5 +1,6 @@
 # manufacturing_erp/config/routes.rb
 Rails.application.routes.draw do
+  devise_for :users
   root "dashboard#index"
   resources :production_lines
   resources :equipment

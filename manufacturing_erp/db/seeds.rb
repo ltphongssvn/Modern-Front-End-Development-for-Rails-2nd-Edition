@@ -104,3 +104,10 @@ puts "Seeded: #{Equipment.count} equipment"
 puts "Seeded: #{MaintenanceSchedule.count} maintenance schedules"
 puts "Seeded: #{QualityCheck.count} quality checks"
 puts "Seeded: #{Alert.count} alerts"
+# Create test user
+User.create!(
+  email: 'admin@manufacturing.com',
+  password: 'password123',
+  password_confirmation: 'password123'
+)
+puts "Created admin user: admin@manufacturing.com / password123"
